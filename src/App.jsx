@@ -26,7 +26,7 @@ function App() {
   }, [length, numberAllowed, charAllowed, setPassword]);
 
   const copyPasswordToClipboard = useCallback(() => {
-    passwordRef.current?.select();
+    // passwordRef.current?.select();
     passwordRef.current?.setSelectionRange(0, 105);
     window.navigator.clipboard.writeText(password);
   }, [password]);
@@ -38,11 +38,11 @@ function App() {
 
   // Increment and decrement functions
   const incrementLength = () => {
-    setLength((prevLength) => Math.min(prevLength + 1, 100)); // Max length 100
+    setLength((prevLength) => Math.min(prevLength + 1, 100));
   };
 
   const decrementLength = () => {
-    setLength((prevLength) => Math.max(prevLength - 1, 6)); // Min length 6
+    setLength((prevLength) => Math.max(prevLength - 1, 6));
   };
 
   return (
